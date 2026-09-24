@@ -1,11 +1,11 @@
 import { View, Text, StyleSheet} from "react-native";
 import { COLORS } from "../constants/colors";
 
-export function Header({objetivo}){
+export function Header({goal}){
     return(
         <View style = {styles.container}>
             <Text style = {styles.title}>Diário de hidratação</Text>
-            <Text style = {styles.subtitle}>Meta Diária: {objetivo}ml</Text>
+            <Text style = {styles.subtitle}>Meta Diária: {goal}ml</Text>
         </View>
     )
 }
@@ -13,11 +13,16 @@ export function Header({objetivo}){
 const styles = StyleSheet.create({
   container:{
     alignItems: 'center',
+    marginBottom: 24,
   },
   title:{
-    color: COLORS.primary,
+    fontSize: 22,
+    fontWeight: 'bold',
+    color: COLORS.textMain,
   },
   subtitle:{
-    backgroundColor:'red',
+    fontSize: 14,
+    marginTop:4,
+    color: COLORS.textMuted,
   },
 })
