@@ -1,27 +1,21 @@
-import { useState } from "react";
-import { StyleSheet, View, StatusBar } from "react-native/types_generated/index";
+import { StatusBar, View, Text, StyleSheet} from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
-import { COLORS } from "./src/constants/colors";
-import {Header} from "./src/components/Header";
-import {WaterProgress} from "./src/components/WaterProgress";
-import {ActionButtons} from "./src/components/ActionButtons";
+import { Header } from "./src/components/Header";
 
-export default function App() {
-  const GOAL = 2000;
-  const [consumed, setConsumed] = useState(0);
-  const handleAddWater = (amount) =>{};
-  const handleReset = () =>{};
-  return (
-  <>
-  <SafeAreaProvider>
-    <SafeAreaView>
-      <Header/>
-      <WaterProgress/>
-      <ActionButtons/>
-    </SafeAreaView>
-  </SafeAreaProvider>
 
+
+
+export default function App(){
+ 
   
-  </>
-  );
+  return(
+    <SafeAreaProvider>
+      <SafeAreaView> 
+      <StatusBar barStyle={'auto'}/>
+      <View>
+        <Header objetivo={100}/>
+      </View>
+      </SafeAreaView>
+    </SafeAreaProvider>
+  )
 }

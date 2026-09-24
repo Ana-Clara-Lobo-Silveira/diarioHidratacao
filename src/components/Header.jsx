@@ -1,10 +1,23 @@
-import { View, Text } from "react-native";
-export function Header(){
-    return(
-        <View>
-            <Text>Eu sou o Header!</Text>
-        </View>
-    );
-};
+import { View, Text, StyleSheet} from "react-native";
+import { COLORS } from "../constants/colors";
 
-export default Header; 
+export function Header({objetivo}){
+    return(
+        <View style = {styles.container}>
+            <Text style = {styles.title}>Diário de hidratação</Text>
+            <Text style = {styles.subtitle}>Meta Diária: {objetivo}ml</Text>
+        </View>
+    )
+}
+
+const styles = StyleSheet.create({
+  container:{
+    alignItems: 'center',
+  },
+  title:{
+    color: COLORS.primary,
+  },
+  subtitle:{
+    backgroundColor:'red',
+  },
+})
