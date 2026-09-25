@@ -1,18 +1,21 @@
-import { View, Text, StyleSheet} from "react-native";
-import { COLORS } from "../constants/colors";
-export function WaterProgress({consumed, goal}){
-    const percentage = Math.min(Math.round((consumed*100)/goal), 100)
-    return(
-        <View>
-            <Text>Você bebeu {consumed}ml de água hoje.</Text>
-            <Text>Você atingiu {percentage}% da Meta</Text>
-            {/* Barra total */}
-            <View style={styles.progressBarBackground}>
-                <View style={[styles.progressBarFill, { width: `${percentage}%` }]} />
-            </View>
-        </View>
-    )
+import { View, Text, StyleSheet } from 'react-native';
+import { COLORS } from '../constants/colors';
 
+export function WaterProgress({ consumed, goal }) {
+  // Cálculo dinâmico da porcentagem atingida para a barra visual
+  const percentage = Math.min(Math.round((consumed / goal) * 100), 100);
+
+  return (
+    <View style={styles.card}>
+      <Text style={styles.consumedText}>{consumed} ml</Text>
+      <Text style={styles.percentageText}>{percentage}% da meta atingida</Text>
+
+      {/* Barra de progresso customizada com Flexbox */}
+      <View style={styles.progressBarBackground}>
+        <View style={[styles.progressBarFill, { width: `${percentage}%` }]} />
+      </View>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({

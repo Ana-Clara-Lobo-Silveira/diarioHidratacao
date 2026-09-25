@@ -1,28 +1,28 @@
-import { View, Text, StyleSheet} from "react-native";
-import { COLORS } from "../constants/colors";
+import { View, Text, StyleSheet } from 'react-native';
+import { COLORS } from '../constants/colors';
 
-export function Header({goal}){
-    return(
-        <View style = {styles.container}>
-            <Text style = {styles.title}>Diário de hidratação</Text>
-            <Text style = {styles.subtitle}>Meta Diária: {goal}ml</Text>
-        </View>
-    )
+export function Header({ goal }) {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>Diário de Hidratação</Text>
+      <Text style={styles.subtitle}>Meta diária: {goal} ml</Text>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
-  container:{
+  container: {
     alignItems: 'center',
     marginBottom: 24,
   },
-  title:{
+  title: {
     fontSize: 22,
     fontWeight: 'bold',
     color: COLORS.textMain,
   },
-  subtitle:{
+  subtitle: {
     fontSize: 14,
-    marginTop:4,
     color: COLORS.textMuted,
+    marginTop: 4,
   },
-})
+});
