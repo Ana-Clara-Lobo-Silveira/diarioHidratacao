@@ -94,3 +94,13 @@ const styles = StyleSheet.create({
     borderRadius: 6,
   },
 });
+
+ANOTAÇÕES PARA MUDANÇAS NO APP ___________________________________________________________________________
+
+- Novo: 
+ - É possível alterar a meta diária(+- 250)
+ - Mínimo de consumo diário é 500ml, abaixo disso não funciona o botão de diminuir
+ - Frase motivacional para continuar bebendo e o parabéns pela meta
+ - Consumo +100
+ - Dica de saúde
+__________________________________________________________________________________________________________
