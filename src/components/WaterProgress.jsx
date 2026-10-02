@@ -4,7 +4,7 @@ import { COLORS } from '../constants/colors';
 export function WaterProgress({ consumed, goal }) {
   // Cálculo dinâmico da porcentagem atingida para a barra visual
   const percentage = Math.min(Math.round((consumed / goal) * 100), 100);
-  const remaining = goal - consumed > 0 ? `Continue bebendo água para atingir a sua meta, faltam ${goal - consumed} ml` : 'Parabéns, você concluir a sua meta' ;
+  const remaining = goal - consumed > 0 ? `Continue bebendo água para atingir a sua meta, faltam ${goal - consumed} ml` : 'Parabéns, você concluiu a sua meta' ;
  
   return (
     <View style={styles.card}>

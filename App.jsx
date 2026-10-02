@@ -14,11 +14,11 @@ export default function App(){
   const [GOAL, setGOAL] = useState(2000);
 
     const handleIncreaseGoal = (ml) => {
-    setGOAL((memoria) => memoria + ml);
+    GOAL == 15000 ? setGOAL((memoria) => memoria): setGOAL((memoria) => memoria + ml);
   };
 
     const handleDecreaseGoal = (ml) => {
-    setGOAL((memoria) => memoria - ml);
+    GOAL == 500 ? setGOAL((memoria) => memoria) : setGOAL((memoria) => memoria - ml);
   };
 
   const [consumed, setConsumed] = useState(0);
