@@ -5,6 +5,7 @@ import { Header } from "./src/components/Header";
 import { WaterProgress } from "./src/components/WaterProgress";
 import { ActionButtons } from "./src/components/ActionButtons";
 import { use, useState } from "react";
+import { InfoMessage } from "./src/components/InfoMessage";
 
 
 
@@ -28,6 +29,7 @@ export default function App(){
         <Header goal={GOAL}/>
         <WaterProgress consumed= {consumed} goal={GOAL} />
         <ActionButtons onAdd={handleAddWater} onReset={handleReset}/>
+        <InfoMessage/>
       </View>
       </SafeAreaView>
     </SafeAreaProvider>
