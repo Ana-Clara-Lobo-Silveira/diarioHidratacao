@@ -6,11 +6,21 @@ import { WaterProgress } from "./src/components/WaterProgress";
 import { ActionButtons } from "./src/components/ActionButtons";
 import { use, useState } from "react";
 import { InfoMessage } from "./src/components/InfoMessage";
+import { AlterGoal } from "./src/components/AlterGoal";
 
 
 
 export default function App(){
-  const GOAL = 2000;
+  const [GOAL, setGOAL] = useState(2000);
+
+    const handleIncreaseGoal = (ml) => {
+    setGOAL((memoria) => memoria + ml);
+  };
+
+    const handleDecreaseGoal = (ml) => {
+    setGOAL((memoria) => memoria - ml);
+  };
+
   const [consumed, setConsumed] = useState(0);
 
   const handleAddWater = (ml) => {
@@ -27,9 +37,11 @@ export default function App(){
       <StatusBar barStyle={'auto'}/>
       <View style={styles.content}>
         <Header goal={GOAL}/>
+        <AlterGoal goal={GOAL} increaseGoal={handleIncreaseGoal} decreaseGoal={handleDecreaseGoal}/>
         <WaterProgress consumed= {consumed} goal={GOAL} />
         <ActionButtons onAdd={handleAddWater} onReset={handleReset}/>
         <InfoMessage/>
+
       </View>
       </SafeAreaView>
     </SafeAreaProvider>
